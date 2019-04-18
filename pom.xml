@@ -10,7 +10,7 @@
 
     <groupId>com.hanclouds</groupId>
     <artifactId>image-sdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0-RELEASE</version>
 
     <packaging>jar</packaging>
 

@@ -7,7 +7,7 @@
 #### Demo案例
 
 ```
-        String serverUrl = "http://xxx.hanclouds.com";
+        String serverUrl = "https://api.hanclouds.com/image/v1";
         //设备级鉴权码信息
         String deviceKey = "xxx";
         String queryToken = "xxx";
