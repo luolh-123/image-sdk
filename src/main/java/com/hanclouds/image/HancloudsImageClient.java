@@ -35,7 +35,7 @@ public class HancloudsImageClient {
         this.serverUrl = serverUrl;
     }
 
-    public <T extends AbstractHttpResponse> CompletableFuture<T> executeAysnc(AbstractHttpRequest<T> request) {
+    public <T extends AbstractHttpResponse> CompletableFuture<T> executeAsync(AbstractHttpRequest<T> request) {
         return CompletableFuture.supplyAsync(() -> {
             try {
                 return this.execute(request);
