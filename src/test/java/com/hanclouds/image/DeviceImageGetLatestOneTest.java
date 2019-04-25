@@ -37,8 +37,7 @@ public class DeviceImageGetLatestOneTest  {
     public static void main(String[] args) {
         String deviceKey = "";
         String dataName = "";
-        //缩略参数 以下三种方式根据实际情况选择其中一种
-        String resize = "200,200";
+        //缩略参数 以下两种方式根据实际情况选择其中一种
         String forcesize = "200,200";
         String rescale = "0.1,0.1";
 
@@ -46,19 +45,19 @@ public class DeviceImageGetLatestOneTest  {
          * 通过用户鉴权获取最新图片数据。
          * 请初始化userKey,authKey,authSecret 变量即可调用
          */
-        getLatestImageByUserAuth(deviceKey, dataName, resize, forcesize, rescale);
+        getLatestImageByUserAuth(deviceKey, dataName, forcesize, rescale);
 
         /**
          * 通过产品查询密钥鉴权获取最新图片数据。
          * 请初始化productKey,queryKey,querySecret 变量即可调用
          */
-        getLatestImageByProductAuth(deviceKey, dataName, resize, forcesize, rescale);
+        getLatestImageByProductAuth(deviceKey, dataName, forcesize, rescale);
 
         /**
          * 通过设备查询密钥鉴权获取最新图片数据。
          * 请初始化deviceKey,queryToken 变量即可调用
          */
-        getLatestImageByDeviceAuth(deviceKey, dataName, resize, forcesize, rescale);
+        getLatestImageByDeviceAuth(deviceKey, dataName, forcesize, rescale);
     }
 
     /**
@@ -67,7 +66,7 @@ public class DeviceImageGetLatestOneTest  {
      * @param deviceKey
      * @param dataName
      */
-    private static void getLatestImageByUserAuth(String deviceKey, String dataName, String resize, String forcesize, String rescale) {
+    private static void getLatestImageByUserAuth(String deviceKey, String dataName, String forcesize, String rescale) {
         HancloudsImageClient client = new HancloudsImageClient(serverUrl);
         //设置用户鉴权参数
         client.putUserAuthParams(userKey, authKey, authSecret);
@@ -76,8 +75,7 @@ public class DeviceImageGetLatestOneTest  {
         request.setDeviceKey(deviceKey);
         request.setDataName(dataName);
 
-        //设置缩略参数 以下三种方式根据实际情况选择其中一种
-        request.setResize(resize);
+        //设置缩略参数 以下两种方式根据实际情况选择其中一种
         request.setForcesize(forcesize);
         request.setRescale(rescale);
 
@@ -110,7 +108,7 @@ public class DeviceImageGetLatestOneTest  {
      * @param deviceKey
      * @param dataName
      */
-    private static void getLatestImageByProductAuth(String deviceKey, String dataName, String resize, String forcesize, String rescale) {
+    private static void getLatestImageByProductAuth(String deviceKey, String dataName, String forcesize, String rescale) {
         HancloudsImageClient client = new HancloudsImageClient(serverUrl);
         //设置产品鉴权参数
         client.putProductAuthParams(productKey, queryKey, querySecret);
@@ -119,8 +117,7 @@ public class DeviceImageGetLatestOneTest  {
         request.setDeviceKey(deviceKey);
         request.setDataName(dataName);
 
-        //设置缩略参数 以下三种方式根据实际情况选择其中一种
-        request.setResize(resize);
+        //设置缩略参数 以下两种方式根据实际情况选择其中一种
         request.setForcesize(forcesize);
         request.setRescale(rescale);
 
@@ -153,7 +150,7 @@ public class DeviceImageGetLatestOneTest  {
      * @param deviceKey
      * @param dataName
      */
-    private static void getLatestImageByDeviceAuth(String deviceKey, String dataName, String resize, String forcesize, String rescale) {
+    private static void getLatestImageByDeviceAuth(String deviceKey, String dataName, String forcesize, String rescale) {
         HancloudsImageClient client = new HancloudsImageClient(serverUrl);
         //设置设备鉴权参数
         client.putDeviceAuthParams(deviceKey, queryToken);
@@ -166,8 +163,7 @@ public class DeviceImageGetLatestOneTest  {
         request.setDeviceKey(deviceKey);
         request.setDataName(dataName);
 
-        //设置缩略参数 以下三种方式根据实际情况选择其中一种
-        request.setResize(resize);
+        //设置缩略参数 以下两种方式根据实际情况选择其中一种
         request.setForcesize(forcesize);
         request.setRescale(rescale);
 
